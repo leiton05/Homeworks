@@ -1,33 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
+import corazon from './assets/corazon.svg'
+import {PatientsToArray, PatientsToLinkedList, RenderArray, ObjectToArray} from './components/patientList'
+import type {Patients} from './components/patientList'
 import './App.css'
+import type { Doctor } from './components/doctors'
+import { AttendFirstPatient } from './components/AttendPatient'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [patients, setPatients] = useState<Patients[]>([])
+  const [doctors, setDoctors] = useState<Doctor[]>([])
+//    const attendPatient = ()=> {
+//      linked.remove(linked.head)
+//      console.log("eliminado")
+  useEffect(() => {
+    setPatients([
+      {name: "Julian Herrera"},
+      {name: "Mariana Campo"},
+      {name: "Daniela Sotelo"},
+      {name: "Sebastian Leiton"},
+      {name: "Samuel De Luque"},
+      {name: "Beta Gurt"},
+      {name: "Nicolas Mora"},
+      {name: "Arthur Morgan"},
+      {name: "Ryan Molina"}
+    ])
+  }, [])
+
+  useEffect(()=> {
+    setDoctors([
+      {name: "Dr. Miguel Henado"},
+      {name: "Dra. Camila Leiton"},
+      {name: "Dr. Bayron Bustamante"},
+      {name: "Dra. Helena Díaz"}
+
+    ])
+  })
+
+  let arrayOfPatients = ObjectToArray(patients)
+  let linked = PatientsToLinkedList(arrayOfPatients)
+
+
+  let patientsArray = PatientsToArray(linked)
+  console.log(patientsArray.toString())
+
+
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <img src={corazon} className="logo" alt="corazon" />
       </div>
-      <h1>Vite + React</h1>
+      <h1>CLINICA AMIGA ❤️</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <h2>Médico de guardia:</h2>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="card">
+        <h2>Lista de pacientes:</h2>
+        <RenderArray patients={patientsArray}/> 
+        <button onClick={attendPatient}>ATENDER</button>
+      </div>
     </>
   )
 }
