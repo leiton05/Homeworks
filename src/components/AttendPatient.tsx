@@ -1,7 +1,7 @@
 // src/tools/attendFirstPatient.ts
-import type { Patients } from "./patientList";
+import type { Patients } from "./PatientList";
 import type { LinkedList } from "../tools/LinkedList";
-import { PatientsToArray } from "./patientList";
+import { PatientsToArray } from "./PatientList";
 
 export interface AttendResult {
   attended: Patients | null;
