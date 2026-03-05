@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import corazon from './assets/corazon.svg'
-import {PatientsToArray, PatientsToLinkedList, RenderArray, ObjectToArray} from './components/patientList'
-import type {Patients} from './components/patientList'
+import {PatientsToArray, PatientsToLinkedList, RenderArray, ObjectToArray} from './components/PatientList'
+import type {Patients} from './components/PatientList'
 import './App.css'
 import type { Doctor } from './components/doctors'
 import { AttendFirstPatient } from './components/AttendPatient'
@@ -57,7 +57,7 @@ function App() {
       <div className="card">
         <h2>Lista de pacientes:</h2>
         <RenderArray patients={patientsArray}/> 
-        <button onClick={attendPatient}>ATENDER</button>
+        <button>ATENDER</button>
       </div>
     </>
   )
