@@ -1,7 +1,7 @@
 class Stack<item> {
   private items: item[];
-  constructor() {
-    this.items = [];
+  constructor(items: item[] = []) {
+    this.items = items;
   }
 
   push(value: item): void {
