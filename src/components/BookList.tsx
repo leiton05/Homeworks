@@ -6,24 +6,36 @@ interface BookListProps {
 }
 
 export function BookList({ book }: BookListProps) {
-  const books = book.getItems();
+  const books = book.getItems().slice().reverse();
 
   /* Espero que este HTML sea decente, porque no sé mucho de HTML */
   return (
     <>
-      <ol>
-        {books.map((book, index) => (
-          <li key={index}>
-            <div>
-              {book.name} - Autor {book.author}
-            </div>
-            <div>
-              ISBN: {book.isbn} - Editorial: {book.editorial}
-            </div>
-            <p></p>
-          </li>
-        ))}
-      </ol>
+      <div
+        style={{
+          resize: "both",
+          width: 1000,
+          height: 500,
+          overflow: "auto",
+          border: 0,
+          padding: "10px",
+          justifyContent: "center",
+        }}
+      >
+        <ol>
+          {books.map((book, index) => (
+            <li key={index}>
+              <div>
+                {book.name} - Autor {book.author}
+              </div>
+              <div>
+                ISBN: {book.isbn} - Editorial: {book.editorial}
+              </div>
+              <p></p>
+            </li>
+          ))}
+        </ol>
+      </div>
     </>
   );
 }
