@@ -49,7 +49,7 @@ export function BookForm({ stack, setStack }: BookFormProp) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-div">
           <input
             type="text"
             placeholder="Nombre"
@@ -75,7 +75,7 @@ export function BookForm({ stack, setStack }: BookFormProp) {
             onChange={(e) => setEditorial(e.target.value)}
           />
         </div>
-        <div>
+        <div className="btn-center">
           <button type="submit">Agregar Libro</button>
           <button type="button" onClick={takeBook}>
             Tomar Libro

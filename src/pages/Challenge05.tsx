@@ -6,6 +6,7 @@ import { ClientList } from "../components/challenge05/ClientList";
 import { mockData } from "../data/challenge05/mockData";
 import { HomeButton } from "../components/HomeButton";
 import { LogoutButton } from "../components/LogoutButton";
+import tool from "../assets/svg/tool.svg";
 
 function Challenge05() {
   const sortedMockData = mockData.sort(
@@ -18,16 +19,28 @@ function Challenge05() {
 
   return (
     <>
-      <HomeButton />
-      <h1>ATM SERVICE</h1>
-      <LogoutButton />
-      <p>
-        Bienvenido al servicio de ATM, registre al siguiente cliente en la cola
-      </p>
-      <ClientForm queue={queue} setQueue={setQueue} />
-      <div>
-        <h2>Personas en cola:</h2>
-        <ClientList client={queue} />
+      <div className="top-elements-challenges">
+        <HomeButton />
+        <div className="top-elements-challenges">
+          <img
+            src={tool}
+            alt="Imagen de una herramienta morada"
+            className="img-tool"
+          />
+          <h1>ATM SERVICE</h1>
+        </div>
+        <LogoutButton />
+      </div>
+      <div className="challenge-content">
+        <p>
+          Bienvenido al servicio de ATM, registre al siguiente cliente en la
+          cola
+        </p>
+        <ClientForm queue={queue} setQueue={setQueue} />
+        <div className="form-div challenge-content">
+          <h2>Personas en cola:</h2>
+          <ClientList client={queue} />
+        </div>
       </div>
     </>
   );

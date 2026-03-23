@@ -44,7 +44,7 @@ export function ClientForm({ queue, setQueue }: ClientFormProp) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-div">
           <input
             type="text"
             placeholder="Nombre"
@@ -58,7 +58,7 @@ export function ClientForm({ queue, setQueue }: ClientFormProp) {
             onChange={(e) => setMoney(Number(e.target.value))}
           />
         </div>
-        <div>
+        <div className="btn-center">
           <button type="submit">Agregar Cliente</button>
           <button type="button" onClick={attendClient}>
             Atender

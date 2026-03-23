@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import "../../src/index.css";
 
 export function LoginForm() {
   /* Basicamente el useAuth pide el contexto actual por lo que lo carga si es valida la solicitud,
@@ -33,23 +34,29 @@ export function LoginForm() {
     <>
       <form onSubmit={handleSubmit}>
         <div>
-          <input
-            type="email"
-            placeholder="Escribe tu correo"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Escribe tu contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        {/* Valida si hay un error, y en caso de que si,
+          <div className="form-div">
+            <div>
+              <label>Email</label>
+              <input
+                type="email"
+                placeholder="Escribe tu correo"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div>
+              <label>Contraseña</label>
+              <input
+                type="password"
+                placeholder="Escribe tu contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            {/* Valida si hay un error, y en caso de que si,
         muestra el contenido de error */}
-        {error && <p>{error}</p>}
-        <div>
+            <div>{error && <p className="error-message-login">{error}</p>}</div>
+          </div>
           <button type="submit">Ingresar</button>
         </div>
       </form>

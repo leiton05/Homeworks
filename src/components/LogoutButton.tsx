@@ -4,7 +4,7 @@ export function LogoutButton() {
   const { logout } = useAuth();
   return (
     <>
-      <button onClick={logout}>Logout</button>
+      <button onClick={logout}>Salir</button>
     </>
   );
 }
