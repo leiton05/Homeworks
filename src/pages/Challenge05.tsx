@@ -5,7 +5,7 @@ import Queue from "../tools/Queue";
 import { ClientList } from "../components/challenge05/ClientList";
 import { mockData } from "../data/challenge05/mockData";
 import { HomeButton } from "../components/HomeButton";
-import { LogoutButton } from "../components/LogOutButton";
+import { LogoutButton } from "../components/LogoutButton";
 
 function Challenge05() {
   const sortedMockData = mockData.sort(

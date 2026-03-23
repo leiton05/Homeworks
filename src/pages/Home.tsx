@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-import { LogoutButton } from "../components/LogOutButton";
+import { LogoutButton } from "../components/LogoutButton";
 
 export function Home() {
   const navigate = useNavigate();
