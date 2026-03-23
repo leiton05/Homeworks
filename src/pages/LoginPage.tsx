@@ -1,13 +1,16 @@
-import { useNavigate } from "react-router-dom";
+import { LoginForm } from "../components/LoginForm";
+import { HomeButton } from "../components/HomeButton";
 
 function LoginPage() {
-  const navigate = useNavigate();
   return (
     <>
       <h1>PAGINA DE LOGIN</h1>
       <p>Bienvenido a la pagina de Login, ingrese sus datos</p>
       <div>
-        <button onClick={() => navigate("/")}>Inicio</button>
+        <HomeButton />
+      </div>
+      <div>
+        <LoginForm />
       </div>
     </>
   );
