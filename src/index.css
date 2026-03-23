@@ -1,0 +1,134 @@
+/* De antemano pido perdón por la aberración de CSS que 
+he de haber creado
+
+Es mi primer proyecto con CSS donde trato de aprender bastante
+los conceptos y pues me gustó el resultado final,
+pero creo que tiene todas las peores practicas de desarrollo
+posibles para CSS 
+
+:´v 
+*/
+
+@font-face {
+  font-family: "ZTNature";
+  src: url("./assets/fonts/ZTNature-Medium.ttf");
+}
+
+body {
+  font-family: "ZTNature";
+}
+
+button {
+  background-color: #a93ad4;
+  color: #fff;
+  font-family: "ZTNature", Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 20px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+}
+
+input {
+  display: flex;
+  justify-content: center;
+}
+
+.form-div {
+  background-color: #c0c0c0;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 360px;
+}
+
+.home-img {
+  width: 300px;
+}
+
+.home-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  min-height: 100vh;
+}
+
+.div-vertical {
+  display: block;
+}
+
+.btn-form {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.form-div-a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  min-height: 89vh;
+}
+
+.img-login {
+  width: 180px;
+}
+
+.error-message-login {
+  font-size: 15px;
+  color: #7600a5;
+}
+
+.top-elements-challenges {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img-tool {
+  width: 80px;
+}
+
+.challenge-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
