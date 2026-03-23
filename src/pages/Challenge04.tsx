@@ -4,19 +4,19 @@ import { BookList } from "../components/challenge04/BookList";
 import { mockData } from "../data/challenge04/mockData";
 import type { Book } from "../models/challenge04/Book";
 import Stack from "../tools/Stack";
-import { useNavigate } from "react-router-dom";
+import { HomeButton } from "../components/HomeButton";
+import { LogoutButton } from "../components/LogOutButton";
 
 /* console.log(mockData) */
 
 function Challenge04() {
-  const navigate = useNavigate();
   const [stack, setStack] = useState(new Stack<Book>(mockData));
   return (
     <>
       <nav className="navbar">
-        <button onClick={() => navigate("/")}>Inicio</button>
+        <HomeButton />
         <h1>BOOKSTACKS</h1>
-        <button>Logout</button>
+        <LogoutButton />
       </nav>
       <p>Coloca tus libros para luego facilmente sacarlos</p>
       <BookForm stack={stack} setStack={setStack} />
