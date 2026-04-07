@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-import { LogoutButton } from "../components/LogoutButton";
+import { LogoutButton } from "../components/auth/LogoutButton";
 import mouseSvg from "../assets/svg/mouse.svg";
 
 export function Home() {
   const navigate = useNavigate();
-  const { isLoggedIn } = useAuth();
+  const { user } = useAuth();
   return (
     <>
       <div className="home-div">
@@ -25,19 +25,19 @@ export function Home() {
             Lugar donde se puede acceder a los distintos Challenges realizado
             por <strong>Sebastian Leiton</strong>
           </p>
-          {isLoggedIn ? null : (
+          {user ? null : (
             <button onClick={() => navigate("/login")}>Ingresar</button>
           )}
 
-          {isLoggedIn ? (
+          {user ? (
             <button onClick={() => navigate("/c4")}>Challenge 04</button>
           ) : null}
 
-          {isLoggedIn ? (
+          {user ? (
             <button onClick={() => navigate("/c5")}>Challenge 05</button>
           ) : null}
 
-          {isLoggedIn ? <LogoutButton /> : null}
+          {user ? <LogoutButton /> : null}
         </div>
       </div>
     </>

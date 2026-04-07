@@ -1,4 +1,4 @@
-import { LoginForm } from "../components/LoginForm";
+import { LoginForm } from "../components/auth/LoginForm";
 import { HomeButton } from "../components/HomeButton";
 import puzzle from "../assets/svg/puzzle.svg";
 import "../index.css";

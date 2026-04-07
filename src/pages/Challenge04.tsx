@@ -5,7 +5,7 @@ import { mockData } from "../data/challenge04/mockData";
 import type { Book } from "../models/challenge04/Book";
 import Stack from "../tools/Stack";
 import { HomeButton } from "../components/HomeButton";
-import { LogoutButton } from "../components/LogoutButton";
+import { LogoutButton } from "../components/auth/LogoutButton";
 import folder from "../assets/svg/folder.svg";
 import "../index.css";
 

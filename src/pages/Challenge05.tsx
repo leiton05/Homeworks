@@ -5,7 +5,7 @@ import Queue from "../tools/Queue";
 import { ClientList } from "../components/challenge05/ClientList";
 import { mockData } from "../data/challenge05/mockData";
 import { HomeButton } from "../components/HomeButton";
-import { LogoutButton } from "../components/LogoutButton";
+import { LogoutButton } from "../components/auth/LogoutButton";
 import tool from "../assets/svg/tool.svg";
 
 function Challenge05() {
