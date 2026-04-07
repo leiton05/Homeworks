@@ -121,6 +121,13 @@ input {
   justify-content: space-between;
 }
 
+.top-elements-challenges2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
 .img-tool {
   width: 80px;
 }
@@ -137,4 +144,74 @@ input {
   display: flex;
   justify-content: center;
   gap: 12px;
+}
+
+.bigger-input {
+  padding: 50px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+}
+
+.ancho-input-tasks {
+  width: 30px;
+}
+
+.header-app {
+  position: relative;
+  padding: 0 20px;
+}
+
+.contenedor-flexeado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.centro-header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.task-item {
+  background-color: #f2f2f2;
+  padding: 16px;
+  border-radius: 12px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 18px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-checkbox {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  accent-color: #a93ad4;
 }

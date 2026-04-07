@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import { PrivateRoute } from "./components/auth/PrivateRoute";
 import RegisterPage from "./pages/RegisterPage";
 import { NotFound } from "./pages/NotFound";
+import { Tasks } from "./pages/Tasks";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path={"/c4"} element={<Challenge04 />} />
           <Route path={"/c5"} element={<Challenge05 />} />
+          <Route path={"/tasks"} element={<Tasks />} />
         </Route>
       </Routes>
     </>

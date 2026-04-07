@@ -37,6 +37,10 @@ export function Home() {
             <button onClick={() => navigate("/c5")}>Challenge 05</button>
           ) : null}
 
+          {user ? (
+            <button onClick={() => navigate("/tasks")}>Task It Up</button>
+          ) : null}
+
           {user ? <LogoutButton /> : null}
         </div>
       </div>
