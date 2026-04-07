@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "./useAuth";
-import type { User } from "../models/UserType";
+import type { User } from "../../models/UserType";
 
 export const useRegisterForm = () => {
   const { registerWithEmailAndPassword } = useAuth();

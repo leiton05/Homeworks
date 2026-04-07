@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { useCollection } from "../firebase/hooks/useCollection";
-import { auth } from "../firebase/config";
+import { useCollection } from "../../firebase/hooks/useCollection";
+import { auth } from "../../firebase/config";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import type { User, UserNotPass, UserLogin } from "../models/UserType";
-import { getAuthErrorMessage } from "../utils/firebaseErrors";
+import type { User, UserNotPass, UserLogin } from "../../models/UserType";
+import { getAuthErrorMessage } from "../../utils/firebaseErrors";
 
 export default function useAuthState() {
   const [user, setUser] = useState<UserNotPass | null>(null);

@@ -1,6 +1,6 @@
 import { createContext, type ReactNode } from "react";
 import type { UserNotPass, UserLogin, User } from "../models/UserType";
-import useAuthState from "../hooks/useAuthState";
+import useAuthState from "../hooks/auth/useAuthState";
 
 interface AuthContextProps {
   user: UserNotPass | null;

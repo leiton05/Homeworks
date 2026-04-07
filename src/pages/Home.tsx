@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../hooks/auth/useAuth";
 import { LogoutButton } from "../components/auth/LogoutButton";
 import mouseSvg from "../assets/svg/mouse.svg";
 
