@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../../../src/index.css";
-import { useLoginForm } from "../../hooks/useLoginForm";
+import { useLoginForm } from "../../hooks/auth/useLoginForm";
 
 export function LoginForm() {
   const navigate = useNavigate();

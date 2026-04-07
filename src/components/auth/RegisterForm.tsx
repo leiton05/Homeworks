@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../../../src/index.css";
-import { useRegisterForm } from "../../hooks/useRegisterForm";
+import { useRegisterForm } from "../../hooks/auth/useRegisterForm";
 import { useEffect } from "react";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../hooks/auth/useAuth";
 
 export function RegisterForm() {
   const navigate = useNavigate();
