@@ -17,28 +17,31 @@ export default function useAuthState() {
   const { getById, setById } = useCollection<UserNotPass>("users");
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       if (firebaseUser) {
         const uid = firebaseUser.uid;
 
+        // ✅ Set inmediato (NO esperar Firestore)
         setUser({
           email: firebaseUser.email || "",
           username: "Usuario",
         });
 
-        try {
-          const userData = await getById(uid);
-
-          if (userData) {
-            setUser(userData);
-          }
-        } catch (error) {
-          console.log("Error obteniendo usuario de Firestore:", error);
-        }
+        // 🔥 Firestore en segundo plano (NO bloquea)
+        getById(uid)
+          .then((userData) => {
+            if (userData) {
+              setUser(userData);
+            }
+          })
+          .catch((error) => {
+            console.log("Error obteniendo usuario de Firestore:", error);
+          });
       } else {
         setUser(null);
       }
 
+      // ✅ SIEMPRE se ejecuta inmediatamente
       setLoading(false);
     });
 
