@@ -18,6 +18,8 @@ body {
   font-family: "ZTNature";
 }
 
+
+
 button {
   background-color: #a93ad4;
   color: #fff;
@@ -55,6 +57,10 @@ input {
 input {
   display: flex;
   justify-content: center;
+}
+
+.confirmation-text {
+  font-size: 12px;
 }
 
 .form-div {
