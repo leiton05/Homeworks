@@ -21,13 +21,13 @@ export default function useAuthState() {
       if (firebaseUser) {
         const uid = firebaseUser.uid;
 
-        // ✅ Set inmediato (NO esperar Firestore)
+        // Set inmediato sin esperar a firebase
         setUser({
           email: firebaseUser.email || "",
           username: "Usuario",
         });
 
-        // 🔥 Firestore en segundo plano (NO bloquea)
+        // Firestore en segundo plano (NO bloquea)
         getById(uid)
           .then((userData) => {
             if (userData) {
@@ -41,7 +41,7 @@ export default function useAuthState() {
         setUser(null);
       }
 
-      // ✅ SIEMPRE se ejecuta inmediatamente
+      // SIEMPRE se ejecuta inmediatamente
       setLoading(false);
     });
 
