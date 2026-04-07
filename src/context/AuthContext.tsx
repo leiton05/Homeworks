@@ -1,5 +1,5 @@
 import { createContext, type ReactNode } from "react";
-import type { UserNotPass, UserLogin, User } from "../models/userType";
+import type { UserNotPass, UserLogin, User } from "../models/UserType";
 import useAuthState from "../hooks/useAuthState";
 
 interface AuthContextProps {

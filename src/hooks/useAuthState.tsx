@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import type { User, UserNotPass, UserLogin } from "../models/userType";
+import type { User, UserNotPass, UserLogin } from "../models/UserType";
 import { getAuthErrorMessage } from "../utils/firebaseErrors";
 
 export default function useAuthState() {
