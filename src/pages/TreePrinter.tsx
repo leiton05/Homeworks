@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import treeImg from "../assets/img/tree.png";
-import TreeForm from "../components/TreePrinter/TreeForm";
-import TreeOutPut from "../components/TreePrinter/TreeOutPut";
+import TreeForm from "../components/treePrinter/TreeForm";
+import TreeOutPut from "../components/treePrinter/TreeOutPut";
 import { useState } from "react";
 import BinaryTree from "../tools/tree/BinaryTree";
 
