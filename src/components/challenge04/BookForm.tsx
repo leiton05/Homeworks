@@ -50,24 +50,28 @@ export function BookForm({ stack, setStack }: BookFormProp) {
     <>
       <form onSubmit={handleSubmit}>
         <div className="form-div">
+          <label>Nombre</label>
           <input
             type="text"
             placeholder="Nombre"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          <label>ISBN</label>
           <input
             type="text"
             placeholder="ISBN"
             value={isbn}
             onChange={(e) => setIsbn(e.target.value)}
           />
+          <label>Autor</label>
           <input
             type="text"
             placeholder="Autor"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
           />
+          <label>Editorial</label>
           <input
             type="text"
             placeholder="Editorial"

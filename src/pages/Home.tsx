@@ -2,10 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/auth/useAuth";
 import { LogoutButton } from "../components/auth/LogoutButton";
 import mouseSvg from "../assets/svg/mouse.svg";
+import { useState } from "react";
 
 export function Home() {
   const navigate = useNavigate();
   const { user } = useAuth();
+  const [explore, setExplore] = useState<boolean>(false);
   return (
     <>
       <div className="home-div">
@@ -41,7 +43,20 @@ export function Home() {
             <button onClick={() => navigate("/tasks")}>Task It Up</button>
           ) : null}
 
+          {explore || user ? (
+            <button onClick={() => navigate("/tree")}>Impresor de Arbol</button>
+          ) : null}
+
           {user ? <LogoutButton /> : null}
+
+          {user || explore ? null : (
+            <button
+              className="button-no-account"
+              onClick={() => setExplore(true)}
+            >
+              Explorar sin cuenta
+            </button>
+          )}
         </div>
       </div>
     </>

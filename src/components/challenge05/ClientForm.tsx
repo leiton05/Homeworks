@@ -45,12 +45,15 @@ export function ClientForm({ queue, setQueue }: ClientFormProp) {
     <>
       <form onSubmit={handleSubmit}>
         <div className="form-div">
+          <label htmlFor="">Nombre</label>
           <input
             type="text"
             placeholder="Nombre"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          <p></p>
+          <label htmlFor="">Cantidad</label>
           <input
             type="number"
             placeholder="Monto a retirar"
