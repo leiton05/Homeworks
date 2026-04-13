@@ -10,6 +10,8 @@ function TreePrinter() {
     new BinaryTree<number>(),
   );
   const [result, setResult] = useState<string>("");
+  const [isResult, setIsResult] = useState<boolean>(false);
+
   return (
     <>
       <header className="header-app">
@@ -20,13 +22,13 @@ function TreePrinter() {
         />
       </header>
       <div className="challenge-content">
-        <TreeForm
+        <TreeForm setTree={setTree} setResult={setResult} />
+        <TreeOutPut
+          numbers={result}
           tree={tree}
-          setTree={setTree}
-          result={result}
-          setResult={setResult}
+          isResult={isResult}
+          setIsResult={setIsResult}
         />
-        <TreeOutPut numbers={result} />
       </div>
     </>
   );
