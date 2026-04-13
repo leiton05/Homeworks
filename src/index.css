@@ -31,6 +31,10 @@ button {
   margin: 10px;
 }
 
+.button-no-account {
+  background-color: #5f5f5f
+}
+
 button:hover {
   opacity: 0.7;
 }
@@ -54,27 +58,46 @@ input {
   border-radius: 12px;
 }
 
-input {
-  display: flex;
-  justify-content: center;
-}
 
 .confirmation-text {
   font-size: 12px;
 }
 
 .form-div {
+  background-color: #b5b5b5;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 83%;
+  max-width: 500px;
+}
+
+.form-input {
+  width: 50px;
+}
+
+.home-img {
+  width: 300px;
+}
+
+.task-item,
+.form-div:last-child {
+  width: 100%;
+  max-width: 700px;
+}
+
+.list-div {
   background-color: #c0c0c0;
   border-radius: 16px;
   padding: 32px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
-  width: 360px;
-}
-
-.home-img {
-  width: 300px;
+  width: 100%;
+  max-width: 800px;
 }
 
 .home-div {
@@ -116,9 +139,16 @@ input {
 
 .top-elements-challenges {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.main-navbar {
+  border-bottom: 1px solid #ccc;
 }
 
 .top-elements-challenges2 {
@@ -136,8 +166,10 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 10px;
+  gap: 32px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .btn-center {
