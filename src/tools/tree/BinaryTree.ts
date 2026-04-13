@@ -30,6 +30,30 @@ class BinaryTree<T extends number> {
       }
     }
   }
+
+  inOrder(node: Node<T> | null, result: T[] = []): T[] {
+    if (!node) return result;
+    this.inOrder(node.left, result);
+    result.push(node.value);
+    this.inOrder(node.right, result);
+    return result;
+  }
+
+  preOrder(node: Node<T> | null, result: T[] = []): T[] {
+    if (!node) return result;
+    result.push(node.value);
+    this.preOrder(node.left, result);
+    this.preOrder(node.right, result);
+    return result;
+  }
+
+  postOrder(node: Node<T> | null, result: T[] = []): T[] {
+    if (!node) return result;
+    this.postOrder(node.left, result);
+    this.postOrder(node.right, result);
+    result.push(node.value);
+    return result;
+  }
 }
 
 export default BinaryTree;
