@@ -7,6 +7,7 @@ import { PrivateRoute } from "./components/auth/PrivateRoute";
 import RegisterPage from "./pages/RegisterPage";
 import { NotFound } from "./pages/NotFound";
 import { Tasks } from "./pages/Tasks";
+import TreePrinter from "./pages/TreePrinter";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path={"/"} element={<Home />} />
         <Route path={"/login"} element={<LoginPage />} />
         <Route path={"/register"} element={<RegisterPage />} />
+        <Route path={"/tree"} element={<TreePrinter />} />
 
         {/* Rutas no encontradas */}
         <Route path={"*"} element={<NotFound />} />
