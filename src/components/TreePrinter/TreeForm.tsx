@@ -1,69 +1,59 @@
 import { useState } from "react";
-import BinaryTree from "../../tools/tree/BinaryTree";
+import type BinaryTree from "../../tools/tree/BinaryTree";
 import { stringToTree } from "../../tools/tree/TreeUtils";
 
 interface TreeFormProp {
-  tree: BinaryTree<number>;
-  result: string;
   setTree: (tree: BinaryTree<number>) => void;
   setResult: (result: string) => void;
 }
 
-function TreeForm({ tree, result, setTree, setResult }: TreeFormProp) {
+function TreeForm({ setTree, setResult }: TreeFormProp) {
   const [numbers, setNumbers] = useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("Submiiiiiit");
-    e.preventDefault();
+  const handleClick = (type: "preorder" | "inorder" | "postorder") => {
+    const newTree = stringToTree(numbers);
+    setTree(newTree);
 
-    const buttonName = (e.nativeEvent as SubmitEvent).submitter?.getAttribute(
-      "name",
-    );
-    console.log("boton: " + buttonName);
-
-    tree = stringToTree(numbers);
-    setTree(tree);
-
-    switch (buttonName) {
+    let output = "";
+    switch (type) {
       case "preorder":
-        result = tree.preOrder(tree.root).join(" ");
+        output = newTree.preOrder(newTree.root).join(" ");
         break;
       case "inorder":
-        result = tree.inOrder(tree.root).join(" ");
+        output = newTree.inOrder(newTree.root).join(" ");
         break;
       case "postorder":
-        result = tree.postOrder(tree.root).join(" ");
+        output = newTree.postOrder(newTree.root).join(" ");
         break;
     }
 
+    setResult(output);
     /* setNumbers(""); */
-    setResult(result);
   };
+
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <div className="form-div">
-          <label>Números</label>
-          <input
-            type="text"
-            placeholder="10 12 3 5 17"
-            value={numbers}
-            onChange={(e) => setNumbers(e.target.value)}
-          />
-        </div>
-        <div className="btn-center">
-          <button type="submit" name="preorder">
-            PreOrder
-          </button>
-          <button type="submit" name="inorder">
-            InOrder
-          </button>
-          <button type="submit" name="postorder">
-            PostOrder
-          </button>
-        </div>
-      </form>
-    </>
+    <div>
+      <div className="form-div">
+        <label>Números</label>
+        <input
+          type="text"
+          placeholder="10 12 3 5 17"
+          value={numbers}
+          onChange={(e) => setNumbers(e.target.value)}
+        />
+      </div>
+      <div className="btn-center">
+        <button type="button" onClick={() => handleClick("preorder")}>
+          PreOrder
+        </button>
+        <button type="button" onClick={() => handleClick("inorder")}>
+          InOrder
+        </button>
+        <button type="button" onClick={() => handleClick("postorder")}>
+          PostOrder
+        </button>
+      </div>
+    </div>
   );
 }
 
