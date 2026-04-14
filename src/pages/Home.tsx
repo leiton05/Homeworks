@@ -47,6 +47,10 @@ export function Home() {
             <button onClick={() => navigate("/tree")}>Impresor de Arbol</button>
           ) : null}
 
+          {explore || user ? (
+            <button onClick={() => navigate("/treeMenu")}>Menú de Arbol</button>
+          ) : null}
+
           {user ? <LogoutButton /> : null}
 
           {user || explore ? null : (
