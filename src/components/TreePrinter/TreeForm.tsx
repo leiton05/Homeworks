@@ -28,7 +28,6 @@ function TreeForm({ setTree, setResult }: TreeFormProp) {
     }
 
     setResult(output);
-    /* setNumbers(""); */
   };
 
   return (

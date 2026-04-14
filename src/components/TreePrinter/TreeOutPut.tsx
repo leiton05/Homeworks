@@ -1,14 +1,18 @@
-import type BinaryTree from "../../tools/tree/BinaryTree";
+import Tree from "react-d3-tree";
+import { TransformToD3 } from "../../utils/TransformToD3";
+import BinaryTree from "../../tools/tree/BinaryTree";
 import CheckForm from "./CheckForm";
 
-interface TreeOutPutProp {
+interface Props {
   numbers: string;
   tree: BinaryTree<number>;
   isResult: boolean;
-  setIsResult: (isResult: boolean) => void;
+  setIsResult: (value: boolean) => void;
 }
 
-function TreeOutPut({ numbers, tree, isResult, setIsResult }: TreeOutPutProp) {
+function TreeOutPut({ numbers, tree, isResult, setIsResult }: Props) {
+  const data = TransformToD3(tree.root);
+
   return (
     <div>
       {numbers && (
@@ -17,6 +21,15 @@ function TreeOutPut({ numbers, tree, isResult, setIsResult }: TreeOutPutProp) {
         </p>
       )}
       <CheckForm tree={tree} isResult={isResult} setResult={setIsResult} />
+
+      {/* Árbol visual */}
+      <div className="very-fat-div form-div">
+        {data ? (
+          <Tree data={data} orientation="vertical" pathFunc="diagonal" />
+        ) : (
+          <p>No hay árbol aún</p>
+        )}
+      </div>
     </div>
   );
 }
