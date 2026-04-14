@@ -8,6 +8,8 @@ import RegisterPage from "./pages/RegisterPage";
 import { NotFound } from "./pages/NotFound";
 import { Tasks } from "./pages/Tasks";
 import TreePrinter from "./pages/TreePrinter";
+import TreeMenu from "./pages/TreeMenu";
+import TreeMenuEndPoint from "./pages/TreeMenuEndPoint";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path={"/login"} element={<LoginPage />} />
         <Route path={"/register"} element={<RegisterPage />} />
         <Route path={"/tree"} element={<TreePrinter />} />
+        <Route path={"/treeMenu"} element={<TreeMenu />} />
+        <Route path={"/treeMenu/*"} element={<TreeMenuEndPoint />} />
 
         {/* Rutas no encontradas */}
         <Route path={"*"} element={<NotFound />} />

@@ -257,7 +257,49 @@ input {
   color: rgb(100, 0, 0)
 }
 
+.dark-purple-text {
+  color: rgb(87, 0, 128)
+}
+
 .very-fat-div {
   width: 150%;
   height: 500px;
+}
+
+.div-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar {
+  background-color: #c0c0c0;
+  padding: 16px;
+  border-radius: 12px;
+  width: 220px;
+}
+
+.sidebar ul {
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 8px 0;
+}
+
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-family: "ZTNature", Verdana, Geneva, Tahoma, sans-serif;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.sidebar a:hover {
+  background-color: #a93ad4;
+  color: #fff;
 }
