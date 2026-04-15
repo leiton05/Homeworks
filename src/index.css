@@ -1,0 +1,300 @@
+/* De antemano pido perdón por la aberración de CSS que 
+he de haber creado
+
+Es mi primer proyecto con CSS donde trato de aprender bastante
+los conceptos y pues me gustó el resultado final,
+pero creo que tiene todas las peores practicas de desarrollo
+posibles para CSS 
+
+:´v 
+*/
+
+@font-face {
+  font-family: "ZTNature";
+  src: url("./assets/fonts/ZTNature-Medium.ttf");
+}
+
+body {
+  font-family: "ZTNature";
+}
+
+button {
+  background-color: #a93ad4;
+  color: #fff;
+  font-family: "ZTNature", Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.button-no-account {
+  background-color: #5f5f5f;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 20px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+}
+
+.confirmation-text {
+  font-size: 12px;
+}
+
+.form-div {
+  background-color: #b5b5b5;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 83%;
+  max-width: 500px;
+}
+
+.form-input {
+  width: 50px;
+}
+
+.home-img {
+  width: 300px;
+}
+
+.task-item,
+.form-div:last-child {
+  width: 100%;
+  max-width: 700px;
+}
+
+.list-div {
+  background-color: #c0c0c0;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.home-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  min-height: 100vh;
+}
+
+.div-vertical {
+  display: block;
+}
+
+.btn-form {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.form-div-a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  min-height: 89vh;
+}
+
+.img-login {
+  width: 180px;
+}
+
+.error-message-login {
+  font-size: 15px;
+  color: #7600a5;
+}
+
+.top-elements-challenges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.main-navbar {
+  border-bottom: 1px solid #ccc;
+}
+
+.top-elements-challenges2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.img-tool {
+  width: 80px;
+}
+
+.challenge-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.bigger-input {
+  padding: 50px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+}
+
+.ancho-input-tasks {
+  width: 30px;
+}
+
+.header-app {
+  position: relative;
+  padding: 0 20px;
+}
+
+.contenedor-flexeado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.centro-header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.task-item {
+  background-color: #f2f2f2;
+  padding: 16px;
+  border-radius: 12px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 18px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-checkbox {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  accent-color: #a93ad4;
+}
+
+.green-text {
+  color: rgb(0, 83, 0);
+}
+
+.red-text {
+  color: rgb(100, 0, 0);
+}
+
+.dark-purple-text {
+  color: rgb(87, 0, 128);
+}
+
+.very-fat-div {
+  width: 150%;
+  height: 500px;
+}
+
+.div-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar {
+  background-color: #c0c0c0;
+  padding: 16px;
+  border-radius: 12px;
+  width: 220px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 8px 0;
+}
+
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-family: "ZTNature", Verdana, Geneva, Tahoma, sans-serif;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.sidebar a:hover {
+  background-color: #a93ad4;
+  color: #fff;
+}
