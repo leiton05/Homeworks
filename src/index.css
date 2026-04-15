@@ -238,6 +238,12 @@ input {
   gap: 12px;
 }
 
+.btn-group-2 {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .custom-checkbox {
   width: 26px;
   height: 26px;
@@ -268,11 +274,17 @@ input {
   justify-content: center;
 }
 
+.div-center-2 {
+  text-align: center;
+}
+
 .sidebar {
-  background-color: #c0c0c0;
-  padding: 16px;
-  border-radius: 12px;
-  width: 220px;
+  background: linear-gradient(135deg, #d3d3d3, #b0b0b0);
+  padding: 20px;
+  border-radius: 16px;
+  width: 240px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #999;
 }
 
 .sidebar ul {
@@ -282,7 +294,7 @@ input {
 }
 
 .sidebar li {
-  margin: 8px 0;
+  margin: 10px 0;
 }
 
 .sidebar a {
@@ -290,11 +302,37 @@ input {
   text-decoration: none;
   color: #333;
   font-family: "ZTNature", Verdana, Geneva, Tahoma, sans-serif;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
-.sidebar a:hover {
-  background-color: #a93ad4;
-  color: #fff;
+.div-menu {
+  width: 500px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: #929292;
+}
+
+.main-conteiner-files {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: #929292;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.main-conteiner-data {
+  flex: 1;
+  border-radius: 12px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: #c0c0c0;
+  border-radius: 12px;
 }

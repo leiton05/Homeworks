@@ -6,7 +6,7 @@ class NaryTree<T> {
     this.root = null;
   }
 
-  insert(value: T, parentValue?: T) {
+  insert(value: T, parentName?: string) {
     const newNode = new Node(value);
 
     // Si no hay raíz, el nuevo nodo será la raíz
@@ -16,12 +16,12 @@ class NaryTree<T> {
     }
 
     // Si se especifica un padre, se busca un nodo que coincida con ese valor y se le asigna un hijo que es newNode
-    if (parentValue !== undefined) {
-      const parentNode = this.find(this.root, parentValue);
+    if (parentName !== undefined) {
+      const parentNode = this.find(this.root, parentName);
       if (parentNode) {
         parentNode.addChild(newNode);
       } else {
-        throw new Error(`Parent with value ${parentValue} not found`);
+        throw new Error(`Parent with name ${parentName} not found`);
       }
     } else {
       // Si no se especifica padre se agrega como hijo del root
@@ -29,10 +29,15 @@ class NaryTree<T> {
     }
   }
 
-  private find(node: Node<T>, value: T): Node<T> | null {
-    if (node.value === value) return node;
+  findNode(name: string): Node<T> | null {
+    if (!this.root) return null;
+    return this.find(this.root, name);
+  }
+
+  private find(node: Node<T>, name: string): Node<T> | null {
+    if ((node.value as any).name === name) return node;
     for (const child of node.children) {
-      const found = this.find(child, value);
+      const found = this.find(child, name);
       if (found) return found;
     }
     return null;
