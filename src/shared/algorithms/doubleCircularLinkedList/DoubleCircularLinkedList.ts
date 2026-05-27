@@ -1,10 +1,8 @@
+import type { Track } from "@/features/tracks/interfaces/track.interface";
 import Node from "./Node";
-import type { Book } from "@/features/books/interfaces/book.interface";
-import type { BookDashboard } from "@/features/dashboard/interfaces/book.interface";
-import type { Collection } from "@/features/collections/interfaces/collection.interface";
-import { PAGE_SIZE } from "@/features/books/constants/book.constants";
+import { PAGE_SIZE } from "@/features/tracks/constants/track.constants";
 
-class DoubleCircularLinkedList<T extends Book | BookDashboard | Collection> {
+class DoubleCircularLinkedList<T extends Track> {
   head: Node<T> | null = null;
 
   constructor(nodes: T[], pageSize: number = PAGE_SIZE) {
