@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "@/pages";
 import { Dashboard } from "@/pages/Dashboard";
 import { Library } from "@/pages/Library";
+import { TopSongs } from "@/pages/TopSongs";
 
 export const AppRouter = () => {
   return (
@@ -12,6 +13,7 @@ export const AppRouter = () => {
       {/* Layout común para las siguientes rutas */}
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/library" element={<Library />} />
+      <Route path="/recommendations" element={<TopSongs />} />
     </Routes>
   );
 };
