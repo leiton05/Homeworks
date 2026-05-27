@@ -13,11 +13,11 @@ export const Dashboard = () => {
         <BGCard
           description="Explora nuestra colección de música"
           buttonTag="Explorar"
-          link="/explore"
+          link="/library"
         />
         <BGCard
-          description="Descubre que canciones se encuentra en tendencia"
-          buttonTag="Ver en tendencia"
+          description="Descubre que canciones en tendencia"
+          buttonTag="Descubrir"
           link="/recommendations"
         />
       </div>
