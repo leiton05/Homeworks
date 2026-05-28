@@ -1,14 +1,28 @@
 import { TopTrackCard } from "./TopTrackCard";
 
-import { useTopTracks } from "../hooks/useTopTrack";
+import type { Track } from "@/features/tracks/interfaces/track.interface";
 
-export const TopTrackList = () => {
-  const { topTracks } = useTopTracks();
+interface TopTrackListProps {
+  tracks: Track[];
+  isToRecommend?: boolean;
+  setRecommendedTracks?: React.Dispatch<React.SetStateAction<Track[]>>;
+}
 
+export const TopTrackList = ({
+  tracks,
+  isToRecommend,
+  setRecommendedTracks,
+}: TopTrackListProps) => {
   return (
     <div className="flex flex-col gap-4 w-full mt-6">
-      {topTracks.map((track, index) => (
-        <TopTrackCard key={track.id} track={track} position={index + 1} />
+      {tracks.map((track, index) => (
+        <TopTrackCard
+          key={track.id}
+          track={track}
+          position={index + 1}
+          isToRecommend={isToRecommend}
+          setRecommendedTracks={setRecommendedTracks}
+        />
       ))}
     </div>
   );

@@ -1,11 +1,26 @@
+import { useRecommendations } from "@/features/recommendations/hooks/useRecommendations";
 import type { Track } from "../../tracks/interfaces/track.interface";
 
 interface Props {
   track: Track;
   position: number;
+  isToRecommend?: boolean;
+  setRecommendedTracks?: React.Dispatch<React.SetStateAction<Track[]>>;
 }
 
-export const TopTrackCard = ({ track, position }: Props) => {
+export const TopTrackCard = ({
+  track,
+  position,
+  isToRecommend,
+  setRecommendedTracks,
+}: Props) => {
+  const { getRecommendations } = useRecommendations();
+
+  const handleRecommend = () => {
+    const recommendations = getRecommendations(track);
+
+    setRecommendedTracks?.([...recommendations.slice(0, 5)]);
+  };
   return (
     <div
       className="
@@ -54,6 +69,26 @@ export const TopTrackCard = ({ track, position }: Props) => {
           Popularidad: {track.popularity}
         </span>
       </div>
+      {isToRecommend && (
+        <button
+          className="
+            ml-auto
+            bg-[#1db954]
+            hover:bg-[#1ed760]
+            text-black
+            text-xs
+            font-semibold
+            px-3
+            py-1.5
+            rounded-full
+            transition
+            cursor-pointer
+          "
+          onClick={handleRecommend}
+        >
+          <i className="ri-quill-pen-ai-fill"></i>
+        </button>
+      )}
     </div>
   );
 };

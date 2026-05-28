@@ -1,8 +1,14 @@
 import Navbar from "@/shared/components/ui/navigation/Navbar";
 import logo from "@/assets/logo.svg";
 import { TopTrackList } from "@/features/topSongs/components/TopTrackList";
+import { useTopTracks } from "@/features/topSongs/hooks/useTopTrack";
+import { useState } from "react";
+import type { Track } from "@/features/tracks/interfaces/track.interface";
 
 export const TopSongs = () => {
+  const { topTracks } = useTopTracks();
+
+  const [recommendedTracks, setRecommendedTracks] = useState([] as Track[]);
   return (
     <>
       <Navbar imgUrl={logo} title="Aura Music" alt="Logo de aura music" />
@@ -12,9 +18,16 @@ export const TopSongs = () => {
       <div className="flex justify-center items-center gap-10 mt-8">
         <div className="w-110 h-170 rounded-2xl bg-zinc-800 shadow-lg flex flex-col items-center">
           <h2 className="font-bold text-xl mt-4">Top Canciones</h2>
-          <TopTrackList />
+          <TopTrackList
+            tracks={topTracks}
+            isToRecommend={true}
+            setRecommendedTracks={setRecommendedTracks}
+          />
         </div>
-        <div className="w-110 h-170 rounded-2xl bg-zinc-800 shadow-lg flex flex-col items-center"></div>
+        <div className="w-110 h-170 rounded-2xl bg-zinc-800 shadow-lg flex flex-col items-center">
+          <h2 className="font-bold text-xl mt-4">Recomendaciones</h2>
+          <TopTrackList tracks={recommendedTracks} isToRecommend={false} />
+        </div>
       </div>
     </>
   );

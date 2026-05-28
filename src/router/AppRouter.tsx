@@ -1,8 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home } from "@/pages";
-import { Dashboard } from "@/pages/Dashboard";
-import { Library } from "@/pages/Library";
-import { TopSongs } from "@/pages/TopSongs";
+import { Dashboard, Home, Library, TopSongs } from "@/pages";
 
 export const AppRouter = () => {
   return (
