@@ -45,7 +45,7 @@ export function TrackList({
   const totalPages = Math.ceil(tracks.length / pageSize);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mt-5">
       <div className={listClassName}>
         {currentNode.nodes.map((track) => (
           <TrackCard key={track.id} track={track} />

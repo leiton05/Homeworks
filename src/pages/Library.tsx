@@ -18,7 +18,12 @@ export const Library = () => {
   const tracksToShow = query ? results : tracks;
   return (
     <>
-      <Navbar imgUrl={logo} title="Aura Music" alt="Logo de aura music" />
+      <Navbar
+        imgUrl={logo}
+        title="Aura Music"
+        alt="Logo de aura music"
+        showBackButton={true}
+      />
       <div className="flex flex-col items-center justify-center">
         <h2>
           Explora nuestro catalogo de canciones y descubre tu nueva canción
